@@ -343,11 +343,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj",
       "projectName": "Application",
-      "projectPath": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj",
+      "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj",
       "packagesPath": "C:\\Users\\jonce\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\obj\\",
+      "outputPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -371,8 +371,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {
-              "projectPath": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj"
+            "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj"
             }
           }
         }

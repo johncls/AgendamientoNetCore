@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {}
+    "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {
+    "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\jonce\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

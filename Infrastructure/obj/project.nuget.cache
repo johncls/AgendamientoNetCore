@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Wf/XLJjuZLI=",
+  "dgSpecHash": "uTB84DJJygY=",
   "success": true,
-  "projectFilePath": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonce\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512",
     "C:\\Users\\jonce\\.nuget\\packages\\efcore.namingconventions\\7.0.2\\efcore.namingconventions.7.0.2.nupkg.sha512",

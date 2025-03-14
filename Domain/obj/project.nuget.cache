@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GS3ivAgiR3w=",
+  "dgSpecHash": "OY9M21DpeGY=",
   "success": true,
-  "projectFilePath": "c:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jonce\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512"
   ],
