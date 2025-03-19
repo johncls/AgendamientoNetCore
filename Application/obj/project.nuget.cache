@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "IsIm2TW1fnk=",
+  "dgSpecHash": "zPlIBfDnTAIj3xoYcqHafcf4Gc+l4ItsmdonPsgl1RPaLTdjC4h/RWIXdWFQg8u2CHRADJnI1W2D4vX7aOUIPA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj",
+  "projectFilePath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jonce\\.nuget\\packages\\dapper\\2.1.15\\dapper.2.1.15.nupkg.sha512",
-    "C:\\Users\\jonce\\.nuget\\packages\\fluentvalidation\\11.8.0\\fluentvalidation.11.8.0.nupkg.sha512",
-    "C:\\Users\\jonce\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.8.0\\fluentvalidation.dependencyinjectionextensions.11.8.0.nupkg.sha512",
-    "C:\\Users\\jonce\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
-    "C:\\Users\\jonce\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
-    "C:\\Users\\jonce\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-rc.2.23479.6\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512",
-    "C:\\Users\\jonce\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0-rc.2.23479.6\\microsoft.extensions.logging.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512"
+    "/home/john-p-inilla/.nuget/packages/dapper/2.1.15/dapper.2.1.15.nupkg.sha512",
+    "/home/john-p-inilla/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",
+    "/home/john-p-inilla/.nuget/packages/fluentvalidation.dependencyinjectionextensions/11.8.0/fluentvalidation.dependencyinjectionextensions.11.8.0.nupkg.sha512",
+    "/home/john-p-inilla/.nuget/packages/mediatr/12.1.1/mediatr.12.1.1.nupkg.sha512",
+    "/home/john-p-inilla/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
+    "/home/john-p-inilla/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0-rc.2.23479.6/microsoft.extensions.dependencyinjection.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512",
+    "/home/john-p-inilla/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0-rc.2.23479.6/microsoft.extensions.logging.abstractions.8.0.0-rc.2.23479.6.nupkg.sha512"
   ],
   "logs": []
 }

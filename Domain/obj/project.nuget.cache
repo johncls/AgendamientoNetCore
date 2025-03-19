@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OY9M21DpeGY=",
+  "dgSpecHash": "4iSHGZ4nPlKj4eIjoG1XGMLK+ubUiE9qY4RbZkLb/uDfFbA4SUi1WlPi/2qsx/bzT/nBuvqpjuHny+FITdFtBQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
+  "projectFilePath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\jonce\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512"
+    "/home/john-p-inilla/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512"
   ],
   "logs": []
 }

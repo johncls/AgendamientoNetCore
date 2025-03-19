@@ -1,42 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Infrastructure\\Infrastructure.csproj": {}
+    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj": {
+    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj",
+        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\jonce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\obj\\",
+        "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
+        "packagesPath": "/home/john-p-inilla/.nuget/packages/",
+        "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jonce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj"
+              "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
+                "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj"
               }
             }
           }
@@ -45,11 +36,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -89,35 +75,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {
+    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
+        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\jonce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\obj\\",
+        "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
+        "packagesPath": "/home/john-p-inilla/.nuget/packages/",
+        "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jonce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -130,11 +107,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -162,46 +134,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Infrastructure\\Infrastructure.csproj": {
+    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\jonce\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Infrastructure\\obj\\",
+        "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj",
+        "packagesPath": "/home/john-p-inilla/.nuget/packages/",
+        "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\jonce\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Application\\Application.csproj"
+              "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj": {
+                "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj"
               },
-              "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\jonce\\Documents\\LechoneriaBa\\Domain\\Domain.csproj"
+              "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
+                "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj"
               }
             }
           }
@@ -210,11 +173,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -264,7 +222,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.114/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

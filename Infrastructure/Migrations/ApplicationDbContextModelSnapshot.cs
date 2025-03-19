@@ -119,6 +119,36 @@ namespace Infrastructure.Migrations
                     b.ToTable("employee", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Inventory.Inventory", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("id");
+
+                    b.Property<Guid>("IdProduct")
+                        .HasColumnType("uuid")
+                        .HasColumnName("id_product");
+
+                    b.Property<DateTime>("LastUpdate")
+                        .HasMaxLength(10)
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("last_update");
+
+                    b.Property<int>("Quantity")
+                        .HasMaxLength(10)
+                        .HasColumnType("integer")
+                        .HasColumnName("quantity");
+
+                    b.HasKey("Id")
+                        .HasName("pk_inventory");
+
+                    b.HasIndex("IdProduct")
+                        .HasDatabaseName("ix_inventory_id_product");
+
+                    b.ToTable("inventory", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Invoice.Invoice", b =>
                 {
                     b.Property<Guid>("Id")
@@ -309,6 +339,16 @@ namespace Infrastructure.Migrations
                         .HasConstraintName("fk_employee_user_user_id");
                 });
 
+            modelBuilder.Entity("Domain.Inventory.Inventory", b =>
+                {
+                    b.HasOne("Domain.Product.Product", null)
+                        .WithMany()
+                        .HasForeignKey("IdProduct")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("fk_inventory_products_product_id");
+                });
+
             modelBuilder.Entity("Domain.Invoice.Invoice", b =>
                 {
                     b.HasOne("Domain.Client.Client", null)
@@ -326,7 +366,7 @@ namespace Infrastructure.Migrations
                         .HasForeignKey("IdInvoice")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired()
-                        .HasConstraintName("fk_details_invoice_invoice_invoice_id");
+                        .HasConstraintName("fk_details_invoice_invoices_invoice_id");
 
                     b.HasOne("Domain.Product.Product", null)
                         .WithMany()
