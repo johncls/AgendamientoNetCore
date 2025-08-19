@@ -18,7 +18,7 @@ namespace Domain.InvoiceDetail
             decimal subTotal,
             DateTime deliveryDate,
             DateTime deliveryTime,
-            bool deposit) : base(id)
+            decimal deposit) : base(id)
         {
             IdInvoice = idInvoice;
             IdProduct = idProduct;
@@ -32,27 +32,27 @@ namespace Domain.InvoiceDetail
         /// <summary>
         /// id de la factura 
         /// </summary>
-        public Guid IdInvoice { get;  set; }
+        public Guid IdInvoice { get; set; }
         /// <summary>
         /// id del producto
         /// </summary>
-        public Guid IdProduct { get;  set; }
+        public Guid IdProduct { get; set; }
         /// <summary>
         /// Cantidad del producto
         /// </summary>
-        public decimal Amount { get;  set; }
+        public decimal Amount { get; set; }
         /// <summary>
         /// Precio unitario
         /// </summary>
-        public decimal PriceUnit { get;  set; }
+        public decimal PriceUnit { get; set; }
         /// <summary>
         /// sub total de la factura
         /// </summary>
-        public decimal SubTotal { get;  set; }
+        public decimal SubTotal { get; set; }
         /// <summary>
         /// Fecha de entrega
         /// </summary>
-        public DateTime DeliveryDate { get;  set; }
+        public DateTime DeliveryDate { get; set; }
         /// <summary>
         /// Hora de entrega
         /// </summary>
@@ -60,7 +60,7 @@ namespace Domain.InvoiceDetail
         /// <summary>
         /// Deposito lata
         /// </summary>
-        public bool Deposit { get;  set; } = true;
+        public decimal Deposit { get; set; }
 
         public static InvoiceDetail Created(
             Guid idInvoice,
@@ -70,9 +70,10 @@ namespace Domain.InvoiceDetail
             decimal subTotal,
             DateTime deliveryDate,
             DateTime deliveryTime,
-            bool deposit
+            decimal deposit
             )
         {
+            subTotal = CalculateSubTotal(amount, priceUnit, deposit);
             var invoiceDetail = new InvoiceDetail(
                Guid.NewGuid(),
                idInvoice,
@@ -87,6 +88,11 @@ namespace Domain.InvoiceDetail
             invoiceDetail.RaiseDomainEvent(new InvoiceDetailCreatedDomainEvent(invoiceDetail.Id));
 
             return invoiceDetail;
+        }
+
+        public static decimal CalculateSubTotal(decimal amount, decimal priceUnit, decimal deposit)
+        {
+            return (amount * priceUnit) + deposit;
         }
     }
 }

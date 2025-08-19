@@ -3,7 +3,7 @@ using System.Data;
 
 namespace Application.Abstractions.Behaviors.Data
 {
-    public interface ISqlConnecionFactory
+    public interface ISqlConnectionFactory
     {
         IDbConnection CreateConnection();
     }

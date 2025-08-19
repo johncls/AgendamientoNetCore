@@ -17,9 +17,34 @@ namespace Infrastructure.Repositories
 
             if(result == null)
             {
-                return null;
+                return null; // Return null explicitly as the method now allows nullable Invoice
             }  
             return result;
+        }
+
+        public async Task<Invoice?> UpdateInvoiceAsync(Invoice Invoice, string docName, CancellationToken cancellationToken = default)
+        {
+            try
+            {
+                _context.ChangeTracker.Clear();
+                
+                _context.Invoices.Update(Invoice);
+
+                // Guardar los cambios en la base de datos
+                await _context.SaveChangesAsync(cancellationToken);
+
+                var result = await _context.Invoices.FirstOrDefaultAsync(c => c.Id == Invoice.Id, cancellationToken);
+                
+                if (result == null)
+                    return null;
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }          
+            
         }
     }
 }

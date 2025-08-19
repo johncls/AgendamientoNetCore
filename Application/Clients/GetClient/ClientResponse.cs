@@ -7,42 +7,42 @@ namespace Application.Clients.GetClient
 {
     public class ClientResponse
     {
-                /// <summary>
+        /// <summary>
         /// Identificacion del cliente
         /// </summary>
-        public decimal Identification { get; private set; }
+        public decimal Identification { get; set; }
         /// <summary>
         /// Nombre del cliente
         /// </summary>
-        public string? Name { get; private set; } = string.Empty;
+        public string? Name { get; set; } = string.Empty;
         /// <summary>
         /// Apellido del cliente
         /// </summary>
-        public string? LastName { get; private set; } = string.Empty;
+        public string? LastName { get;  set; } = string.Empty;
         /// <summary>
         /// Telefono del cliente
         /// </summary>
-        public string? Phone { get; private set; }
+        public string? Phone { get;  set; }
         /// <summary>
         /// Correo cliente
         /// </summary>
-        public string? Email { get; private set; } = string.Empty;
+        public string? Email { get;  set; } = string.Empty;
         /// <summary>
         /// dirección
         /// </summary>
-        public string Address { get; private set; }  = string.Empty;
+        public string Address { get;  set; }  = string.Empty;
         /// <summary>
         /// Ciudad
         /// </summary>
-        public string City { get; private set; }  = string.Empty;
+        public string City { get;  set; }  = string.Empty;
         /// <summary>
         /// Departamento
         /// </summary>
-        public string State { get; private set;} = string.Empty;
+        public string State { get;  set;} = string.Empty;
         /// <summary>
         /// Country
         /// </summary>
-        public string Country { get; private set; }  = string.Empty;
+        public string Country { get;  set; }  = string.Empty;
     }
 }
 

@@ -14,7 +14,7 @@ namespace Lechoneria.Api.Extensions
         public static void SeedData(this IApplicationBuilder app)
         {
             using var scope = app.ApplicationServices.CreateScope();
-            var sqlConnectionFactory = scope.ServiceProvider.GetRequiredService<ISqlConnecionFactory>();
+            var sqlConnectionFactory = scope.ServiceProvider.GetRequiredService<ISqlConnectionFactory>();
             using var connection = sqlConnectionFactory.CreateConnection();
 
             var faker = new Faker();

@@ -14,7 +14,7 @@ namespace Application.Products.GetProducts
         /// <summary>
         /// Nomabre del producto
         /// </summary>
-        public string Name {get; private set;} = string.Empty;
+        public string Name {get; set;} = string.Empty;
         /// <summary>
         /// Precio del producto
         /// </summary>

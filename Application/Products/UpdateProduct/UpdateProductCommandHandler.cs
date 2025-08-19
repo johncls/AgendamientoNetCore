@@ -18,9 +18,12 @@ namespace Application.Products.UpdateProduct
         public async Task<Result<Product>> Handle(UpdatedProductCommand request, CancellationToken cancellationToken)
         {
             Product productData = new (){
-                Id  = request.Id,
+                Id = request.Id,
                 Name = request.Name,
+                CodeProduct = request.CodeProduct,
                 Price = request.Price,
+                Amount = request.Amount ?? 0,
+                UnitOfMeasurement = request.UnitOfMeasurement ?? string.Empty,
                 DateCreated = request.DataCreated,
                 
             };

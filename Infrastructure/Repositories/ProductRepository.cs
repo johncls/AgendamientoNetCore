@@ -14,13 +14,24 @@ namespace Infrastructure.Repositories
 
         public async Task<bool> DeleteProduct(Guid id, CancellationToken cancellationToken = default)
         {
-           var result = await _context.Products.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
+            var result = await _context.Products.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
             if (result == null)
                 return false;
 
             _context.Products.Remove(result);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<Product> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
+        {
+            var result = await _context.Products.FirstOrDefaultAsync(c => c.Id == id,
+                                                                cancellationToken);
+            if (result == null)
+            {
+                return null;
+            }          
+            return result;
         }
 
         public async Task<Product> GetByNameProductAsync(string name, CancellationToken cancellationToken = default)
@@ -41,10 +52,17 @@ namespace Infrastructure.Repositories
                 var existingProduct = await _context.Products
                     .FirstOrDefaultAsync(c => c.Id == id, cancellationToken);
 
-                if (existingProduct == null)
+                if (existingProduct == null )
                     return false;
+                // Update the properties of the existing product
+                existingProduct.Name = product.Name;
+                existingProduct.CodeProduct = product.CodeProduct;
+                existingProduct.Price = product.Price;
+                existingProduct.Amount = product.Amount;
+                existingProduct.UnitOfMeasurement = product.UnitOfMeasurement;
+                existingProduct.DateCreated = product.DateCreated;
 
-                _context.Entry(existingProduct).CurrentValues.SetValues(product);
+                // Save the changes to the database
                 await _context.SaveChangesAsync(cancellationToken);
 
                 return true;

@@ -213,8 +213,8 @@ namespace Infrastructure.Migrations
                         .HasColumnType("timestamp with time zone")
                         .HasColumnName("delivery_time");
 
-                    b.Property<bool>("Deposit")
-                        .HasColumnType("boolean")
+                    b.Property<decimal>("Deposit")
+                        .HasColumnType("numeric")
                         .HasColumnName("deposit");
 
                     b.Property<Guid>("IdInvoice")
@@ -257,6 +257,12 @@ namespace Infrastructure.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("integer")
                         .HasColumnName("amount");
+
+                    b.Property<string>("CodeProduct")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)")
+                        .HasColumnName("code_product");
 
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("timestamp with time zone")

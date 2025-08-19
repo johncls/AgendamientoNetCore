@@ -14,5 +14,13 @@ namespace Domain.InvoiceDetail
         /// </summary>
         /// <param name="detailInvoice">datos del detalle de la factura</param>
         void Add(InvoiceDetail detailInvoice);
+        /// <summary>
+        /// Metodo para actualizar los datos de la factura
+        /// </summary>
+        /// <param name="invoiceDetail"></param>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<bool> UpdateClientAsync(InvoiceDetail invoiceDetail, Guid id, CancellationToken cancellationToken = default);
     }
 }

@@ -7,18 +7,18 @@ namespace Application.Clients.GetClient
 {
     public sealed class GetClientQueryHandler : IQueryHandler<GetClientQuery, ClientResponse>
     {
-        private readonly ISqlConnecionFactory _sqlConnecionFactory;
+        private readonly ISqlConnectionFactory _sqlConnectionFactory;
 
-        public GetClientQueryHandler(ISqlConnecionFactory sqlConnecionFactory)
+        public GetClientQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
         {
-            _sqlConnecionFactory = sqlConnecionFactory;
+            _sqlConnectionFactory = sqlConnectionFactory;
         }
 
         public async Task<Result<ClientResponse>> Handle(GetClientQuery request, CancellationToken cancellationToken)
         {
-            using var connection = _sqlConnecionFactory.CreateConnection();
+            using var connection = _sqlConnectionFactory.CreateConnection();
 
-            var sql = String.Format(
+            var sql =
               @"SELECT
                 id AS Id,
                 identification As identification,
@@ -31,10 +31,16 @@ namespace Application.Clients.GetClient
                 state AS State,
                 country As Country
            FROM public.clients WHERE id=@clientId"
-            );
-            var client = await connection.QueryFirstOrDefaultAsync<ClientResponse>(sql, new { request.clientId });
+            ;
 
-            return client;
+            var client = await connection.QueryFirstOrDefaultAsync<ClientResponse>(
+                sql, 
+                new { request.clientId },
+                commandTimeout: null);
+
+            return (Result<ClientResponse>)(client != null
+                ? Result<ClientResponse>.Success(client)
+                : Result<ClientResponse>.Failure(Error.ClientNotFound));
         }
     }
 }

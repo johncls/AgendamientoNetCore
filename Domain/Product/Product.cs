@@ -12,12 +12,14 @@ namespace Domain.Product
         public Product(
             Guid id,
             string name,
+            string codeProduct,
             decimal price,
             int amount,
             string unitOfMeasurement,
             DateTime dateCreated) : base(id)
         {
             Name = name;
+            CodeProduct = codeProduct;
             Price = price;
             Amount = amount;
             UnitOfMeasurement = unitOfMeasurement;
@@ -28,9 +30,13 @@ namespace Domain.Product
         /// </summary>
         public string Name {get;  set;} = string.Empty;
         /// <summary>
+        /// Código del productoq
+        /// </summary>
+        public string CodeProduct { get; set; } = string.Empty;
+        /// <summary>
         /// Precio del producto
         /// </summary>
-        public decimal Price {get; set; } = 0.0m;
+        public decimal Price { get; set; } = 0.0m;
         /// <summary>
         /// Cantidad del producto
         /// </summary>
@@ -44,9 +50,9 @@ namespace Domain.Product
         /// </summary>
         public DateTime DateCreated {get;  set;}
 
-        public static Product Created( string name, decimal price, int amount, string unitOfMeasurement, DateTime dateCreate){
+        public static Product Created( string name, string codeProduct,decimal price, int amount, string unitOfMeasurement, DateTime dateCreate){
 
-            var product = new Product(Guid.NewGuid(), name, price, amount, unitOfMeasurement,dateCreate);
+            var product = new Product(Guid.NewGuid(), name, codeProduct, price, amount, unitOfMeasurement,dateCreate);
 
             product.RaiseDomainEvent(new ProductCreatedDomainEvent(product.Id));
             return product;

@@ -34,5 +34,12 @@ namespace Domain.Product
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         Task<bool> DeleteProduct(Guid id, CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Metodo para buscar un producto por id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<Product> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
     }
 }

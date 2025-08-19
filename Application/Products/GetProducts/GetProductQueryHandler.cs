@@ -8,16 +8,16 @@ namespace Application.Products.GetProducts
 {
     public sealed class GetProductQueryHandler: IQueryHandler<GetProductQuery, ProductResponse>
     {
-        private readonly ISqlConnecionFactory _sqlConnecionFactory;
+        private readonly ISqlConnectionFactory _sqlConnectionFactory;
 
-        public GetProductQueryHandler(ISqlConnecionFactory sqlConnecionFactory)
+        public GetProductQueryHandler(ISqlConnectionFactory sqlConnectionFactory)
         {
-            _sqlConnecionFactory = sqlConnecionFactory;
+            _sqlConnectionFactory = sqlConnectionFactory;
         }
 
         public async Task<Result<ProductResponse>> Handle(GetProductQuery request, CancellationToken cancellationToken)
         {
-            using var connection = _sqlConnecionFactory.CreateConnection();
+            using var connection = _sqlConnectionFactory.CreateConnection();
 
             var sql = String.Format(
               @"SELECT

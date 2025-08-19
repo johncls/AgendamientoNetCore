@@ -13,6 +13,9 @@ namespace Infrastructure.Configuration
             builder.Property(x => x.Name)
                    .IsRequired()
                    .HasMaxLength(200);
+            builder.Property(x => x.CodeProduct)
+                   .IsRequired()
+                   .HasMaxLength(50);
             builder.Property(x => x.Price)
                     .IsRequired()
                     .HasMaxLength(10);

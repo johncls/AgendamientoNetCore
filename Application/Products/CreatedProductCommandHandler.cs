@@ -23,7 +23,7 @@ namespace Application.Products
                 try
                 {
 
-                    var productData = Product.Created(request.name, request.price, request.Amount, request.UnitOfMeasurement, DateTime.UtcNow);
+                    var productData = Product.Created(request.name, request.codeProduct, request.price, request.Amount, request.UnitOfMeasurement, DateTime.UtcNow);
 
                     _productRepository.Add(productData);
 

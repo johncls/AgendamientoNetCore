@@ -4,7 +4,7 @@ using Npgsql;
 
 namespace Infrastructure.Data
 {
-    internal class SqlConnectionFactory : ISqlConnecionFactory
+    internal class SqlConnectionFactory : ISqlConnectionFactory
     {
         private readonly string _connectionString;
 

@@ -29,27 +29,27 @@ namespace Domain.Invoice
         /// <summary>
         /// id del cliente
         /// </summary>
-        public Guid IdClient { get; private set; }
+        public Guid IdClient { get;  set; }
         /// <summary>
         /// Fecha de creación
         /// </summary>
-        public DateTime DateCreated { get; private set; }
+        public DateTime DateCreated { get;  set; }
         /// <summary>
         /// Doc class de la factura 
         /// </summary>
-        public string DocClass { get; private set; } = string.Empty;
+        public string DocClass { get; set; } = string.Empty;
         /// <summary>
         /// Consecutivo de la factura
         /// </summary>
-        public int DocNumber { get; private set; } = 0;
+        public int DocNumber { get;  set; } = 0;
         /// <summary>
         /// Nombre del conscutivo
         /// </summary>
-        public string DocName { get; private set; } = string.Empty;
+        public string DocName { get;  set; } = string.Empty;
         /// <summary>
         /// total de la factura
         /// </summary>
-        public decimal Total { get; private set; }
+        public decimal Total { get;  set; }
 
         public static Invoice Created(Guid idClient, DateTime dateCreated, string docClass, int docNumber, string docName,decimal total)
         {

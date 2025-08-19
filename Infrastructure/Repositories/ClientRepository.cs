@@ -25,11 +25,11 @@ namespace Infrastructure.Repositories
         public async Task<bool> UpdateClientAsync(Client client, Guid id, CancellationToken cancellationToken = default)
         {
 
-            var result = _context.Clients.FirstOrDefaultAsync(c => client.Id == id, cancellationToken);
-            if (result == null)
+            var result = _context.Clients.FirstOrDefaultAsync(c => c.Id.Equals(id), cancellationToken);
+            if (result.Result == null)
                 return false;
 
-            _context.Clients.Update(client);
+            var updateResult = _context.Clients.AddAsync(client);
 
             // Guardar los cambios en la base de datos
             await _context.SaveChangesAsync(cancellationToken);
@@ -39,8 +39,8 @@ namespace Infrastructure.Repositories
 
         public async Task<bool> DeleteClientAsync(Guid id, CancellationToken cancellationToken = default)
         {
-            var result = await _context.Clients.FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
-            if (result == null)
+            var result = await _context.Clients.FirstOrDefaultAsync(x => x.Id.Equals(id), cancellationToken);
+            if (result == null || result.Id == Guid.Empty)
                 return false;
 
             _context.Clients.Remove(result);

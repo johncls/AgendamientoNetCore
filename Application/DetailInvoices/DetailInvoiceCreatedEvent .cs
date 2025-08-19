@@ -12,7 +12,7 @@ namespace Application.DetailInvoices
         public decimal SubTotal { get; }
         public DateTime DeliveryDate { get; }
         public DateTime DeliveryTime { get; }
-        public bool Deposit { get; }
+        public decimal Deposit { get; }
 
         public DetailInvoiceCreatedEvent(
             Guid invoiceId,
@@ -22,7 +22,7 @@ namespace Application.DetailInvoices
             decimal subTotal,
             DateTime deliveryDate,
             DateTime deliveryTime,
-            bool deposit)
+            decimal deposit)
         {
             InvoiceId = invoiceId;
             ProductId = productId;

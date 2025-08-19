@@ -19,5 +19,13 @@ namespace Domain.Invoice
         /// </summary>
         /// <param name="Invoice">datos del pais</param>
         void Add(Invoice Invoice);
+        /// <summary>
+        /// Actualiza los datos de la factura
+        /// </summary>
+        /// <param name="Invoice"></param>
+        /// <param name="docName"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<Invoice> UpdateInvoiceAsync(Invoice Invoice, string docName, CancellationToken cancellationToken = default);
     }
 }

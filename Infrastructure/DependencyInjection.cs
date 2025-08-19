@@ -29,7 +29,7 @@ namespace Infrastructure
                 options.UseNpgsql(connectionString).UseSnakeCaseNamingConvention();
             });
             service.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
-            service.AddSingleton<ISqlConnecionFactory>(_ => new SqlConnectionFactory(connectionString));
+            service.AddSingleton<ISqlConnectionFactory>(_ => new SqlConnectionFactory(connectionString));
             return service;
         }
     }

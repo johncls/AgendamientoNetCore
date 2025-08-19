@@ -12,13 +12,15 @@ namespace Application.Invoices
     public class CreatedInvoiceCommandHandler : ICommandHandler<CreatedInvoiceCommand, Guid>
     {
         private readonly IInvoiceRepository _invoiceRepository;
+        private readonly IProductRepository _productRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly IPublisher _publisher;
         private readonly List<INotification> _domainEvents = new List<INotification>();
 
-        public CreatedInvoiceCommandHandler(IInvoiceRepository invoiceRepository, IUnitOfWork unitOfWork, IPublisher publisher)
+        public CreatedInvoiceCommandHandler(IInvoiceRepository invoiceRepository, IProductRepository productRepository, IUnitOfWork unitOfWork, IPublisher publisher)
         {
             _invoiceRepository = invoiceRepository;
+            _productRepository = productRepository;
             _unitOfWork = unitOfWork;
             _publisher = publisher;
         }
@@ -30,7 +32,14 @@ namespace Application.Invoices
             {
                 try
                 {
+                    
+                    var resultInvoice = await _invoiceRepository.GetByInvoiceAsync(request.docName, cancellationToken);
 
+                    if (resultInvoice != null)
+                    {
+                        return Result.Failure<Guid>(Error.Invoice);
+                    }
+                    
                     var invoiceData = Invoice.Created(request.clientId, DateTime.UtcNow, request.docClass, request.docNumber, request.docName, request.total);
 
                     _invoiceRepository.Add(invoiceData);
@@ -40,7 +49,15 @@ namespace Application.Invoices
 
                     foreach (var invoiceDetail in request.InvoiceDetails)
                     {
-
+                        var product = await _productRepository.GetByIdAsync(invoiceDetail.IdProducts, cancellationToken);
+                        if (product is null)
+                        {
+                            return Result.Failure<Guid>(Error.Product);
+                        }
+                        var updatedInvoiceDetail = invoiceDetail with 
+                        { 
+                            SubTotal = (invoiceDetail.Amount * product.Price) + invoiceDetail.Deposit 
+                        };
                         // Publicar el evento de dominio
                         var detailInvoiceCreatedEvent = new DetailInvoiceCreatedEvent(invoiceData.Id,
                                                                                       invoiceDetail.IdProducts,
