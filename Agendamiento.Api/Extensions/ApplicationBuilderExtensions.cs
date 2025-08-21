@@ -1,5 +1,6 @@
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Agendamiento.Api.Extensions
 {
@@ -19,7 +20,7 @@ namespace Agendamiento.Api.Extensions
                 }
                 catch (Exception ex)
                 {
-                    var logger = loggerFactory.CreateLogger<Program>();
+                    var logger = loggerFactory.CreateLogger("ApplicationBuilderExtensions");
                     logger.LogError(ex, "Error en migracion");
                 }
             }
