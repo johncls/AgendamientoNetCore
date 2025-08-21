@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1lxh+x76ztu2Q+RN3d88poo9Pb2Rrd9gFLoAX7Wq/YLi86PPGH+uSDw/dhIpkOLQgs0lRPOiQhSxX4YdaOXsfg==",
+  "dgSpecHash": "KUYTlyBahZwBeblrLBfB69W4oVB9LQj5SgXE2RodvOXt+mmKU9cYzGwdz0asNWxcrkZ59zpF03RdyND9ispg2A==",
   "success": true,
-  "projectFilePath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
+  "projectFilePath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj",
   "expectedPackageFiles": [
     "/home/john-p-inilla/.nuget/packages/dapper/2.1.15/dapper.2.1.15.nupkg.sha512",
     "/home/john-p-inilla/.nuget/packages/fluentvalidation/11.8.0/fluentvalidation.11.8.0.nupkg.sha512",

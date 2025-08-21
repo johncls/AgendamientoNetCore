@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {}
+    "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj": {}
   },
   "projects": {
-    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
+    "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
+        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
+        "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj",
         "packagesPath": "/home/john-p-inilla/.nuget/packages/",
-        "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/obj/",
+        "outputPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"

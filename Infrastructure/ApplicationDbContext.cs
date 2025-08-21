@@ -4,10 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Application.Exceptions;
 using Domain.Abstractions;
-using Domain.Client;
-using Domain.Invoice;
-using Domain.InvoiceDetail;
-using Domain.Product;
+using Domain.Services;
+using Domain.Shifts;
+using Domain.Trade;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,10 +15,10 @@ namespace Infrastructure
     public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     {
         private readonly IPublisher _publisher;
-        public DbSet<Client> Clients { get; set; }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<Invoice> Invoices { get; set; }
-        public DbSet<InvoiceDetail> InvoicesDetail { get; set; }
+        public DbSet<Service> Services { get; set; }
+        public DbSet<Shifts> Shifts { get; set; }
+        public DbSet<Trade> Trades { get; set; }
+        
         public ApplicationDbContext(DbContextOptions options, IPublisher publisher) : base(options)
         {
             _publisher = publisher;
@@ -30,6 +29,7 @@ namespace Infrastructure
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
             base.OnModelCreating(modelBuilder);
         }
+        
         public async Task<int> SaveChangedAsync(
         CancellationToken cancellationToken = default
         )

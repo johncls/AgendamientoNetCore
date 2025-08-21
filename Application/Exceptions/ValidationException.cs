@@ -13,5 +13,7 @@ namespace Application.Exceptions
         }
 
         public IEnumerable<ValidateError> Errors { get; private set; }
+
+        public string ErrorMessages => string.Join(", ", Errors.Select(e => e.ErrorMessage));
     }
 }

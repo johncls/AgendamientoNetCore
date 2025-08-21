@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj": {}
+    "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Infrastructure/Infrastructure.csproj": {}
   },
   "projects": {
-    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj": {
+    "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
+        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj",
         "projectName": "Application",
-        "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
+        "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj",
         "packagesPath": "/home/john-p-inilla/.nuget/packages/",
-        "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/obj/",
+        "outputPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
-                "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj"
+              "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj": {
+                "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
+    "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
+        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
+        "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj",
         "packagesPath": "/home/john-p-inilla/.nuget/packages/",
-        "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/obj/",
+        "outputPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"
@@ -138,14 +138,14 @@
         }
       }
     },
-    "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj": {
+    "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Infrastructure/Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj",
+        "projectUniqueName": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Infrastructure/Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/Infrastructure.csproj",
+        "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Infrastructure/Infrastructure.csproj",
         "packagesPath": "/home/john-p-inilla/.nuget/packages/",
-        "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Infrastructure/obj/",
+        "outputPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"
@@ -160,11 +160,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj": {
-                "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj"
+              "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj": {
+                "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj"
               },
-              "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
-                "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj"
+              "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj": {
+                "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj"
               }
             }
           }
@@ -179,15 +179,19 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "EFCore.NamingConventions": {
-              "target": "Package",
-              "version": "[7.0.2, )"
-            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0-rc.1.23421.29, )"
             },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[7.0.11, )"
             },
@@ -200,10 +204,6 @@
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
               "version": "[7.0.0, )"
-            },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
-              "target": "Package",
-              "version": "[7.0.11, )"
             }
           },
           "imports": [

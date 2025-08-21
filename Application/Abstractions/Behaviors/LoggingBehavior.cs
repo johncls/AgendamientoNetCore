@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Abstractions.Messaging;
@@ -30,12 +31,12 @@ namespace Application.Abstractions.Behaviors
             _logger.LogInformation("El comando se ejecuto exitosamente", $"{name}");
 
             return result;
-
         }
-        catch (Exception ex)
+        catch (ValidationException ex)
         {
             _logger.LogError(ex, $"el comando tuvo errores");
-            throw;
+
+            throw new (ex.ValidationResult.ErrorMessage);
         }
     }
 }

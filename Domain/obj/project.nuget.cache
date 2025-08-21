@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wTYY/ARf4i/OQpGMCyKZhDbUGQjoZcrgO3bgdlB/fDOVsdk9z0oZtEW6mVLes7emDUk3DFgJfMSeNLKInxVOdw==",
+  "dgSpecHash": "7MOJsT1inlits1+0jeA8SNbOwpc8gwhbbSyx/H8AjgUUK6k/oGWf6wycofvUZN194o15TAT1Bj7/y5/ptpGpHA==",
   "success": true,
-  "projectFilePath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj",
+  "projectFilePath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj",
   "expectedPackageFiles": [
     "/home/john-p-inilla/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512"
   ],

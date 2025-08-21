@@ -3,8 +3,8 @@ using System;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -18,368 +18,103 @@ namespace Infrastructure.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.11")
-                .HasAnnotation("Relational:MaxIdentifierLength", 63);
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Domain.Client.Client", b =>
+            modelBuilder.Entity("Domain.Services.Service", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Address")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("address");
+                    b.Property<TimeSpan>("ClosingHour")
+                        .HasColumnType("time");
 
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("city");
+                    b.Property<int>("Duration")
+                        .HasColumnType("int");
 
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("country");
-
-                    b.Property<string>("Email")
+                    b.Property<string>("NameService")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
-                        .HasColumnName("email");
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<decimal>("Identification")
-                        .HasMaxLength(15)
-                        .HasColumnType("numeric")
-                        .HasColumnName("identification");
+                    b.Property<TimeSpan>("OpeningHour")
+                        .HasColumnType("time");
 
-                    b.Property<string>("LastName")
-                        .HasColumnType("text")
-                        .HasColumnName("last_name");
+                    b.Property<Guid>("TradeId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("character varying(100)")
-                        .HasColumnName("name");
+                    b.HasKey("Id");
 
-                    b.Property<string>("Phone")
-                        .HasColumnType("text")
-                        .HasColumnName("phone");
+                    b.HasIndex("TradeId");
 
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("state");
-
-                    b.HasKey("Id")
-                        .HasName("pk_clients");
-
-                    b.ToTable("clients", (string)null);
+                    b.ToTable("Servicios", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Employees.Employee", b =>
+            modelBuilder.Entity("Domain.Shifts.Shifts", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
+                    b.Property<TimeSpan>("EndTime")
+                        .HasColumnType("time");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
-                        .HasColumnName("first_name");
+                    b.Property<Guid>("ServiceId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("last_name");
+                    b.Property<DateTime>("ShiftDate")
+                        .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
+                    b.Property<TimeSpan>("StartTime")
+                        .HasColumnType("time");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid")
-                        .HasColumnName("user_id");
+                    b.Property<bool>("State")
+                        .HasColumnType("bit");
 
-                    b.HasKey("Id")
-                        .HasName("pk_employee");
+                    b.HasKey("Id");
 
-                    b.HasIndex("UserId")
-                        .HasDatabaseName("ix_employee_user_id");
+                    b.HasIndex("ServiceId");
 
-                    b.ToTable("employee", (string)null);
+                    b.ToTable("Turnos", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.Inventory.Inventory", b =>
+            modelBuilder.Entity("Domain.Trade.Trade", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
+                        .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("IdProduct")
-                        .HasColumnType("uuid")
-                        .HasColumnName("id_product");
+                    b.Property<int>("MaximunCapacity")
+                        .HasColumnType("int");
 
-                    b.Property<DateTime>("LastUpdate")
-                        .HasMaxLength(10)
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("last_update");
-
-                    b.Property<int>("Quantity")
-                        .HasMaxLength(10)
-                        .HasColumnType("integer")
-                        .HasColumnName("quantity");
-
-                    b.HasKey("Id")
-                        .HasName("pk_inventory");
-
-                    b.HasIndex("IdProduct")
-                        .HasDatabaseName("ix_inventory_id_product");
-
-                    b.ToTable("inventory", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Invoice.Invoice", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_created");
-
-                    b.Property<string>("DocClass")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("doc_class");
-
-                    b.Property<string>("DocName")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("doc_name");
-
-                    b.Property<int>("DocNumber")
-                        .HasColumnType("integer")
-                        .HasColumnName("doc_number");
-
-                    b.Property<Guid>("IdClient")
-                        .HasColumnType("uuid")
-                        .HasColumnName("id_client");
-
-                    b.Property<decimal>("Total")
-                        .HasMaxLength(10)
-                        .HasColumnType("numeric")
-                        .HasColumnName("total");
-
-                    b.HasKey("Id")
-                        .HasName("pk_invoice");
-
-                    b.HasIndex("IdClient")
-                        .HasDatabaseName("ix_invoice_id_client");
-
-                    b.ToTable("invoice", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.InvoiceDetail.InvoiceDetail", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<decimal>("Amount")
-                        .HasMaxLength(10)
-                        .HasColumnType("numeric")
-                        .HasColumnName("amount");
-
-                    b.Property<DateTime>("DeliveryDate")
-                        .HasMaxLength(200)
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("delivery_date");
-
-                    b.Property<DateTime>("DeliveryTime")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("delivery_time");
-
-                    b.Property<decimal>("Deposit")
-                        .HasColumnType("numeric")
-                        .HasColumnName("deposit");
-
-                    b.Property<Guid>("IdInvoice")
-                        .HasColumnType("uuid")
-                        .HasColumnName("id_invoice");
-
-                    b.Property<Guid>("IdProduct")
-                        .HasColumnType("uuid")
-                        .HasColumnName("id_product");
-
-                    b.Property<decimal>("PriceUnit")
-                        .HasMaxLength(10)
-                        .HasColumnType("numeric")
-                        .HasColumnName("price_unit");
-
-                    b.Property<decimal>("SubTotal")
-                        .HasColumnType("numeric")
-                        .HasColumnName("sub_total");
-
-                    b.HasKey("Id")
-                        .HasName("pk_details_invoice");
-
-                    b.HasIndex("IdInvoice")
-                        .HasDatabaseName("ix_details_invoice_id_invoice");
-
-                    b.HasIndex("IdProduct")
-                        .HasDatabaseName("ix_details_invoice_id_product");
-
-                    b.ToTable("details_invoice", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Product.Product", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<int>("Amount")
-                        .HasMaxLength(10)
-                        .HasColumnType("integer")
-                        .HasColumnName("amount");
-
-                    b.Property<string>("CodeProduct")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("character varying(50)")
-                        .HasColumnName("code_product");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("date_created");
-
-                    b.Property<string>("Name")
+                    b.Property<string>("NameTrade")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
-                        .HasColumnName("name");
+                        .HasColumnType("nvarchar(200)");
 
-                    b.Property<decimal>("Price")
-                        .HasMaxLength(10)
-                        .HasColumnType("numeric")
-                        .HasColumnName("price");
+                    b.HasKey("Id");
 
-                    b.Property<string>("UnitOfMeasurement")
-                        .IsRequired()
-                        .HasMaxLength(10)
-                        .HasColumnType("character varying(10)")
-                        .HasColumnName("unit_of_measurement");
-
-                    b.HasKey("Id")
-                        .HasName("pk_product");
-
-                    b.ToTable("product", (string)null);
+                    b.ToTable("Comercios", (string)null);
                 });
 
-            modelBuilder.Entity("Domain.User.User", b =>
+            modelBuilder.Entity("Domain.Services.Service", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("id");
-
-                    b.Property<DateTime>("Created_at")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("created_at");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
-                        .HasColumnName("email");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
-                        .HasColumnName("password");
-
-                    b.Property<string>("Role")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("role");
-
-                    b.Property<DateTime>("Updated_at")
-                        .HasColumnType("timestamp with time zone")
-                        .HasColumnName("updated_at");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("character varying(200)")
-                        .HasColumnName("user_name");
-
-                    b.HasKey("Id")
-                        .HasName("pk_user");
-
-                    b.ToTable("user", (string)null);
-                });
-
-            modelBuilder.Entity("Domain.Employees.Employee", b =>
-                {
-                    b.HasOne("Domain.User.User", null)
+                    b.HasOne("Domain.Trade.Trade", null)
                         .WithMany()
-                        .HasForeignKey("UserId")
+                        .HasForeignKey("TradeId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_employee_user_user_id");
+                        .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Inventory.Inventory", b =>
+            modelBuilder.Entity("Domain.Shifts.Shifts", b =>
                 {
-                    b.HasOne("Domain.Product.Product", null)
+                    b.HasOne("Domain.Services.Service", null)
                         .WithMany()
-                        .HasForeignKey("IdProduct")
+                        .HasForeignKey("ServiceId")
                         .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_inventory_products_product_id");
-                });
-
-            modelBuilder.Entity("Domain.Invoice.Invoice", b =>
-                {
-                    b.HasOne("Domain.Client.Client", null)
-                        .WithMany()
-                        .HasForeignKey("IdClient")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_invoice_clients_client_id");
-                });
-
-            modelBuilder.Entity("Domain.InvoiceDetail.InvoiceDetail", b =>
-                {
-                    b.HasOne("Domain.Invoice.Invoice", null)
-                        .WithMany()
-                        .HasForeignKey("IdInvoice")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_details_invoice_invoices_invoice_id");
-
-                    b.HasOne("Domain.Product.Product", null)
-                        .WithMany()
-                        .HasForeignKey("IdProduct")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("fk_details_invoice_products_product_id");
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

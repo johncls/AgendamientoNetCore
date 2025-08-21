@@ -1,6 +1,6 @@
 using System.Data;
+using Microsoft.Data.SqlClient;
 using Application.Abstractions.Behaviors.Data;
-using Npgsql;
 
 namespace Infrastructure.Data
 {
@@ -15,10 +15,7 @@ namespace Infrastructure.Data
 
         public IDbConnection CreateConnection()
         {
-            var connection = new NpgsqlConnection(_connectionString);
-            connection.Open();
-
-            return connection;
+            return new SqlConnection(_connectionString);
         }
     }
 }

@@ -341,11 +341,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
+      "projectUniqueName": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj",
       "projectName": "Application",
-      "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/Application.csproj",
+      "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/Application.csproj",
       "packagesPath": "/home/john-p-inilla/.nuget/packages/",
-      "outputPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Application/obj/",
+      "outputPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Application/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/john-p-inilla/.nuget/NuGet/NuGet.Config"
@@ -360,8 +360,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj": {
-              "projectPath": "/home/john-p-inilla/Documentos/developement/LechoneriaBa/Domain/Domain.csproj"
+            "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj": {
+              "projectPath": "/home/john-p-inilla/Documentos/developement/Turnos/Agendamiento/Domain/Domain.csproj"
             }
           }
         }

@@ -1,9 +1,7 @@
 using Application.Abstractions.Behaviors.Data;
 using Domain.Abstractions;
-using Domain.Client;
-using Domain.Invoice;
-using Domain.InvoiceDetail;
-using Domain.Product;
+using Domain.Services;
+using Domain.Shifts;
 using Infrastructure.Data;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,14 +17,13 @@ namespace Infrastructure
             IConfiguration configuration)
         {
             var connectionString = configuration.GetConnectionString("Database") ?? throw new ArgumentException(nameof(configuration));
-            service.AddScoped<IClientRepository, ClientRepository>();
-            service.AddScoped<IProductRepository, ProductRepository>();
-            service.AddScoped<IInvoiceRepository, InvoiceRepository>();
-            service.AddScoped<IInvoiceDetailRepository, InvoiceDetailRepository>();
+            
+            service.AddScoped<IServiceRepository, ServiceRepository>();
+            service.AddScoped<IShiftsRepository, ShiftsRepository>();
 
             service.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseNpgsql(connectionString).UseSnakeCaseNamingConvention();
+                options.UseSqlServer(connectionString);
             });
             service.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
             service.AddSingleton<ISqlConnectionFactory>(_ => new SqlConnectionFactory(connectionString));
